@@ -1,14 +1,15 @@
-// src/components/Header.jsx
 import React from 'react';
+import logo from '../images/LOGO.jpg';
+import './Header.css';
 
-function Header() {
+const Header = () => {
     return (
         <header>
             <div className="header" id="home">
                 <div className="container">
                     <div className="logo">
                         <a href="#">
-                            <img src="LOGO.jpg" width="190" alt="CafeHunt" />
+                            <img src={logo} width="190" alt="CafeHunt" />
                         </a>
                     </div>
                     <ul className="list">
@@ -25,17 +26,26 @@ function Header() {
                             </div>
                         </li>
                         <li>
-                            <a href="#Booking">Booking</a>
+                            <div className="dropdown">
+                                <a href="menu.html" className="dropbtn">Area</a>
+                                <div className="dropdown-content">
+                                    <a href="menu.html">CBD</a>
+                                    <a href="menu.html">Epsom</a>
+                                    <a href="menu.html">Waitakere</a>
+                                    <a href="menu.html">Blockhouse Bay</a>
+                                    <a href="menu.html">Greenfield</a>
+                                    <a href="menu.html">Birkenhead</a>
+                                    <a href="menu.html">North Shore</a>
+                                    <a href="menu.html">Manukau</a>
+                                    <a href="menu.html">Royal Oak</a>
+                                    <a href="menu.html">Botany</a>
+                                </div>
+                            </div>
                         </li>
-                        <li>
-                            <a href="#footer">PROMOTIONS</a>
-                        </li>
-                        <li>
-                            <a href="#footer">ABOUT US</a>
-                        </li>
-                        <li>
-                            <a href="#footer">CONTACT US</a>
-                        </li>
+                        <li><a href="#Booking">Booking</a></li>
+                        <li><a href="#footer">PROMOTIONS</a></li>
+                        <li><a href="#footer">ABOUT US</a></li>
+                        <li><a href="#footer">CONTACT US</a></li>
                     </ul>
                     <div className="search">
                         <form>
@@ -47,6 +57,6 @@ function Header() {
             </div>
         </header>
     );
-}
+};
 
 export default Header;
