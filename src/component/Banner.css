@@ -1,0 +1,25 @@
+/* Banner Styles */
+.banner {
+  background: url('../images/banner-background.jpg') no-repeat center center / cover; /* Ensures the image covers the entire banner */
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  height: 150px; /* Adjust height as needed */
+  display: flex;
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+}
+
+.banner-bg {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for better text visibility */
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%; /* Ensures it takes the full width of its container */
+}
+
+.banner h2 {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0; /* Removes any default margin */
+}
