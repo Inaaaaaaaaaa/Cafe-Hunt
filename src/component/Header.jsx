@@ -1,8 +1,23 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { signOut } from "firebase/auth";
+import { auth } from '../firebase/firebase-config';
 import logo from '../images/LOGO.jpg';
 import './Header.css';
 
 const Header = () => {
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+            navigate('/login'); // Redirect to login page after logout
+        } catch (error) {
+            console.error('Logout Error:', error.message);
+            // Optionally handle errors, e.g., display an error message
+        }
+    };
+
     return (
         <header>
             <div className="header" id="home">
@@ -45,6 +60,7 @@ const Header = () => {
                         <li><a href="#footer">PROMOTIONS</a></li>
                         <li><a href="#footer">ABOUT US</a></li>
                         <li><a href="#footer">CONTACT US</a></li>
+                        <li><button onClick={handleLogout} className="logout-button">Logout</button></li> {/* Logout button added */}
                     </ul>
                     <div className="search">
                         <form>
