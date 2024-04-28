@@ -42,7 +42,6 @@ const Header = () => {
                                 </div>
                             </div>
                         </li>
-                        <li><a href="#Booking">Booking</a></li>
                         <li><a href="#footer">PROMOTIONS</a></li>
                         <li><a href="#footer">ABOUT US</a></li>
                         <li><a href="#footer">CONTACT US</a></li>
