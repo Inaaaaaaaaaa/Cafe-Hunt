@@ -1,62 +1,89 @@
-import React from 'react';
-import logo from '../images/LOGO.jpg';
-import './Header.css';
-
-const Header = () => {
-    return (
-        <header>
-            <div className="header" id="home">
-                <div className="container">
-                    <div className="logo">
-                        <a href="#">
-                            <img src={logo} width="190" alt="CafeHunt" />
-                        </a>
-                    </div>
-                    <ul className="list">
-                        <li><a href="cafe_hunt.html">HOMEPAGE</a></li>
-                        <li><a href="#det">Gallery</a></li>
-                        <li>
-                            <div className="dropdown">
-                                <a href="menu.html" className="dropbtn">Categories</a>
-                                <div className="dropdown-content">
-                                    <a href="menu.html">Desserts</a>
-                                    <a href="menu.html">Drinks</a>
-                                    <a href="menu.html">Lunch</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="dropdown">
-                                <a href="menu.html" className="dropbtn">Area</a>
-                                <div className="dropdown-content">
-                                    <a href="menu.html">CBD</a>
-                                    <a href="menu.html">Epsom</a>
-                                    <a href="menu.html">Waitakere</a>
-                                    <a href="menu.html">Blockhouse Bay</a>
-                                    <a href="menu.html">Greenfield</a>
-                                    <a href="menu.html">Birkenhead</a>
-                                    <a href="menu.html">North Shore</a>
-                                    <a href="menu.html">Manukau</a>
-                                    <a href="menu.html">Royal Oak</a>
-                                    <a href="menu.html">Botany</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li><a href="#Booking">Booking</a></li>
-                        <li><a href="#footer">PROMOTIONS</a></li>
-                        <li><a href="#footer">ABOUT US</a></li>
-                        <li><a href="#footer">CONTACT US</a></li>
-                    </ul>
-                    <div className="search">
-                        <form>
-                            <input type="submit" value="SEARCH" className="search1" />
-                            <input type="text" className="content1" placeholder="City,food,name,address" />
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </header>
-    );
-};
-
-export default Header;
+/* Header Styles */
+.header {
+    background-color: #fff3e0; /* A soft coffee cream background */
+    color: #613a1f; /* Coffee brown text */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    height: auto;
+    width: 190px; /* Keeping your specified width */
+  }
+  
+  .list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .list li {
+    padding: 0 15px;
+  }
+  
+  .list a {
+    text-decoration: none;
+    color: #613a1f;
+    font-weight: bold;
+  }
+  
+  .list a:hover {
+    color: #3e2723; /* Darker shade for hover effect */
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search input[type="text"] {
+    padding: 7px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .search input[type="submit"] {
+    background-color: #8d6e63; /* Coffee color */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search input[type="submit"]:hover {
+    background-color: #6d4c41; /* Darker shade for button hover */
+  }
