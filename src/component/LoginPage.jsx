@@ -32,13 +32,17 @@ function LoginPage() {
   return (
     <div className="auth-container">
       <form onSubmit={handleLogin}>
-        <h2>Login</h2>
+
+        <h2>Login ☕</h2>
+        <p>Welcome back user! Log in to start your journey of cafe hunting!</p>
         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
-        <button type="submit">Login</button>
+        <div className="button-container">
+          <button type="submit">Login</button>
+          <button onClick={() => navigate('/register')}>Register</button>
+        </div>
         {loginError && <div className="error-message">{loginError}</div>} {/* Display the error message */}
       </form>
-      <button onClick={() => navigate('/register')}>Register</button>
     </div>
   );
 }
