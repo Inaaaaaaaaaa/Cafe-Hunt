@@ -4,10 +4,18 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    background: #ffffff;
+    background: 	#eed9c4;
     box-sizing: border-box;
   }
   
+  body
+  {
+    background-color:  #d9b99b;
+  }
+  .auth-container h2
+  {
+    text-align: center;
+  }
   form {
     display: flex;
     flex-direction: column;
@@ -29,10 +37,10 @@
   }
   
   button {
-    padding: 15px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 14px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
     text-transform: uppercase;

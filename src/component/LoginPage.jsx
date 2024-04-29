@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase/firebase-config';
 import './AuthForm.css';
+import logo from '../images/LOGO.png';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -30,6 +31,7 @@ function LoginPage() {
   };
 
   return (
+    
     <div className="auth-container">
       <form onSubmit={handleLogin}>
         <h2>Login</h2>
