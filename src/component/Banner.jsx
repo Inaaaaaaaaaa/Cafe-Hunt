@@ -5,8 +5,7 @@ const Banner = () => {
     return (
         <div className="banner">
             <div className="banner-bg">
-                <h2><b>Welcome to Cafe Hunt!</b></h2>
-                <p>Start your journey of finding cafes around your area! Start by typing your location below.</p>
+                <h2><b>Discover Your Next Favorite Cafe with Cafe Hunt</b></h2>
             </div>
         </div>
     );

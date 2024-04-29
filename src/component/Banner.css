@@ -1,6 +1,6 @@
 /* Banner Styles */
 .banner {
-  background: url('../images/banner-background.jpg') no-repeat center center / cover; /* Ensures the image covers the entire banner */
+  background: url('../images/banner.jpeg') no-repeat center center / cover; /* Ensures the image covers the entire banner */
   padding: 40px 20px;
   text-align: center;
   color: #fff;
@@ -11,15 +11,22 @@
 }
 
 .banner-bg {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for better text visibility */
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent overlay for better readability */
   padding: 20px;
-  border-radius: 10px;
-  width: 100%; /* Ensures it takes the full width of its container */
+  border-radius: 5px;
 }
 
 .banner h2 {
-  font-size: 28px;
+  color: #fff;
+  font-size: 2rem; /* Responsive font size */
   font-weight: bold;
-  text-transform: uppercase;
-  margin: 0; /* Removes any default margin */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .banner h2 {
+    font-size: 1.5rem;
+  }
 }

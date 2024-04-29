@@ -15,7 +15,7 @@ const ReservationForm = () => {
                     </div>
                     <div className="input">
                         <span>Last name:</span>
-                        <input type="number" placeholder="Enter your last name" />
+                        <input type="text" placeholder="Enter your last name" />
                     </div>
                     <div className="input">
                         <span>Email:</span>
@@ -26,9 +26,9 @@ const ReservationForm = () => {
                         <input type="text" placeholder="Enter your contact number" />
                     </div>
    
-                    <div className="input">
-                        <span>Your message:</span>
-                        <textarea placeholder="Enter your feedback" id="" cols="30" rows="10"></textarea>
+                    <div className="input message-box-centered">
+                    <span>Your message:</span>
+                    <textarea placeholder="Enter your feedback" id="" cols="30" rows="10"></textarea>
                     </div>
                 </div>
                 <input type="submit" value="Submit your form" className="btn" />

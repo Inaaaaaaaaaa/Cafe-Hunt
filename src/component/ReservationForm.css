@@ -38,6 +38,11 @@
 }
 
 .input textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 700px; /* Fixed width */
   resize: none; /* Prevent resizing of textarea */
 }
 
