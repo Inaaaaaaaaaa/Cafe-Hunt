@@ -23,7 +23,7 @@ describe('PlaceDetails Component', () => {
         
         // Check if place name is rendered
         expect(getByText('Test Place')).toBeInTheDocument();
-        
+    
         // Check if place rating is rendered
         expect(getByText('4 out of 5 stars')).toBeInTheDocument();
 
