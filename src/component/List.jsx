@@ -1,19 +1,25 @@
 import React, { useState, useEffect, createRef } from 'react';
 import { CircularProgress, Typography, Card, Grid } from '@mui/material';
-import useStyles from './styles'; // Update the import path as necessary
-import PlaceDetails from './PlaceDetails'; // Update the path as necessary
+import useStyles from './styles';
+import PlaceDetails from './PlaceDetails';
 
 const List = ({ places = [], childClicked, isLoading }) => {
   const classes = useStyles();
   const [elRefs, setElRefs] = useState([]);
 
   useEffect(() => {
-    setElRefs((refs) => Array(places.length).fill().map((_, i) => refs[i] || createRef()));
-  }, [places]);
+    setElRefs((refs) =>
+      Array(places.length)
+        .fill()
+        .map((_, i) => refs[i] || createRef())
+    );
+  }, [places.length]); // Use places.length to avoid infinite loop
 
   return (
     <div className={classes.listContainer}>
-      <Typography variant="h5" gutterBottom>Food & Dining around you</Typography>
+      <Typography variant="h5" gutterBottom>
+        Food & Dining around you
+      </Typography>
       {isLoading ? (
         <div className={classes.loading}>
           <CircularProgress size="5rem" />
