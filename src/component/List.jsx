@@ -1,14 +1,13 @@
 import React, { useState, useEffect, createRef } from 'react';
-import { CircularProgress, Typography, Card, CardMedia, CardContent,Grid  } from '@mui/material';
+import { CircularProgress, Typography, Card, Grid } from '@mui/material';
 import useStyles from './styles'; // Update the import path as necessary
 import PlaceDetails from './PlaceDetails'; // Update the path as necessary
 
-const List = ({ places, childClicked, isLoading }) => {
+const List = ({ places = [], childClicked, isLoading }) => {
   const classes = useStyles();
   const [elRefs, setElRefs] = useState([]);
 
   useEffect(() => {
-    // Create refs for all the items in the list
     setElRefs((refs) => Array(places.length).fill().map((_, i) => refs[i] || createRef()));
   }, [places]);
 
@@ -23,10 +22,10 @@ const List = ({ places, childClicked, isLoading }) => {
         places.map((place, i) => (
           <Card ref={elRefs[i]} className={classes.listItem} key={i}>
             <PlaceDetails
-                  place={place}
-                  selected={Number(childClicked) === i}
-                  refProp={elRefs[i]}
-                />
+              place={place}
+              selected={Number(childClicked) === i}
+              refProp={elRefs[i]}
+            />
           </Card>
         ))
       )}

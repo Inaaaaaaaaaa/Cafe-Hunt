@@ -5,7 +5,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import Rating from '@mui/material/Rating';
 import useStyles from './styles'; // Ensure styles.js is setup properly
 
-const Map = ({ coords, places, setCoords, setBounds, setChildClicked }) => {
+const Map = ({ coords, places = [], setCoords, setBounds, setChildClicked }) => {
     const matches = useMediaQuery('(min-width:600px)');
     const classes = useStyles();
 
@@ -24,7 +24,7 @@ const Map = ({ coords, places, setCoords, setBounds, setChildClicked }) => {
                 }}
                 onChildClick={(child) => setChildClicked(child)}
             >
-                {places.length && places.map((place, i) => (
+                {places.length > 0 && places.map((place, i) => (
                     <div
                         className={classes.markerContainer}
                         lat={Number(place.latitude)}
