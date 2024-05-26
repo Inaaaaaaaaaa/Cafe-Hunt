@@ -1,9 +1,50 @@
                                                              ** Cafe Hunt**
 
-**Introduction:** Cafe Hunt is a website application created and developed by 5 developers. The goal of this app is to allow users to search up cafes around their area or type in a different location to enhance their experience of finding new cafes.
+## Introduction: Cafe Hunt is a website application created and developed by 5 developers. The goal of this app is to allow users to search up cafes around their area or type in a different location to enhance their experience of finding new cafes.
 
+## Features:
+- User Authentication:Log in with existing account or register a new account.
+- Location tracking: Browser-based location tracking with user permission.
+- Search: Users can search for cafes in any location using the search bar.
+- Interactive map: Displays the user's current or searched location.
 
-**Installation steps and usage instructions:**
+## Configuration Options
+1. Environment setup:
+   - Ensure Node.js is installed.
+   - Setup Sanity studio and deploy the backend.
+   - Configure Google TravelAdvisor API keys.
+     
+2. Running the application
+   - Clone the repository and install dependencies.
+   - Start the development server with `npm start`.
+  _Read installation steps and usage instructions for more deatils_
+
+## Dependencies
+- **React:** Building user interface.
+- **Sanity:** Backend service to store user data.
+- **Google TravelAdvisor API:** Fetching cafe locations and details in real time.
+- **Visual Studio Code:** IDE for development.
+- **Firebase:** Login authentication.
+- **GitHub:** Uploading Respority.
+
+## Contributing Guidelines
+1. Fork the Project
+2. Create your Feature Branch 
+3. Commit your Changes 
+4. Push to the Branch 
+5. Open a Pull Request
+
+## Authors
+Ina Youn: Inaaaaaaaaaa https://github.com/Inaaaaaaaaaa 
+Junxiu Wu: Junxiujunxiu https://github.com/Junxiujunxiu
+Mukus Lee: Toshiakia https://github.com/Toshiakia 
+Kirtika Nair: tikasn https://github.com/tikasn
+Yuchang Sun: sunyuchang123 https://github.com/sunyuchang123
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+--------------------------------------------------------------------------------------------------------------------------------------------
+                                             **Installation steps and usage instructions:**
 # Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -23,10 +64,8 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ### `npm run build`
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
-
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run eject`
