@@ -1,0 +1,117 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+@keyframes moveStars {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+body {
+  background: #d2b48c; /* Coffee color */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #8b4513; /* Coffee color */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://image.shutterstock.com/image-vector/star-pattern-on-dark-background-260nw-1081999505.jpg') repeat;
+  opacity: 0.5;
+  z-index: 1;
+  animation: moveStars 30s linear infinite;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 2s ease-in-out, blink 2s infinite;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.1);
+}
+
+.gallery-info {
+  padding: 15px;
+  text-align: center;
+  background-color: rgba(139, 69, 19, 0.9); /* Darker Coffee color */
+}
+
+.gallery-name {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.gallery-description {
+  font-size: 1rem;
+  color: #777;
+}
