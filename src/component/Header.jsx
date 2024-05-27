@@ -29,10 +29,10 @@ const Header = () => {
                     </div>
                     <ul className="list">
                         <li><a href="cafe_hunt.html">HOMEPAGE</a></li>
-                        <li><a href="#det">Gallery</a></li>
+                        <li><a href="#det">GALLERY</a></li>
                         <li>
                             <div className="dropdown">
-                                <a href="menu.html" className="dropbtn">Categories</a>
+                                <a href="menu.html" className="dropbtn">CATEGORIES</a>
                                 <div className="dropdown-content">
                                     <a href="menu.html">Desserts</a>
                                     <a href="menu.html">Drinks</a>
@@ -42,7 +42,7 @@ const Header = () => {
                         </li>
                         <li>
                             <div className="dropdown">
-                                <a href="menu.html" className="dropbtn">Area</a>
+                                <a href="menu.html" className="dropbtn">AREA</a>
                                 <div className="dropdown-content">
                                     <a href="menu.html">CBD</a>
                                     <a href="menu.html">Epsom</a>
