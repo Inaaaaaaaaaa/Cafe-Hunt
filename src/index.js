@@ -1,13 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // Import the createRoot API
+import  ReactDOM from 'react-dom';
+
 import App from './App';
 
-// Create a root.
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-// Initial render: Render the App component into the root.
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+ReactDOM.render(<App />, document.getElementById('root'));
