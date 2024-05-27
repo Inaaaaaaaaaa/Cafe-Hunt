@@ -5,14 +5,17 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import Rating from '@mui/material/Rating';
 import useStyles from './styles'; // Ensure styles.js is set up properly
 
-const Map = ({ coords, places = [], setCoords, setBounds, setChildClicked }) => {
+const Map = ({ coords, places, setCoords, setBounds, setChildClicked }) => {
   const matches = useMediaQuery('(min-width:600px)');
   const classes = useStyles();
+
+  console.log('Map coordinates:', coords); // Add this line
+  console.log('Map places:', places); // Add this line
 
   return (
     <div className={classes.mapContainer}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "YOUR_API_KEY_HERE" }}
+        bootstrapURLKeys={{ key: "AIzaSyBCBQVaU_ZXvaYlWQaYFvVd8FlkajrhszI" }}
         defaultCenter={coords}
         center={coords}
         defaultZoom={14}
@@ -25,28 +28,30 @@ const Map = ({ coords, places = [], setCoords, setBounds, setChildClicked }) => 
         onChildClick={(child) => setChildClicked(child)}
       >
         {places.length > 0 && places.map((place, i) => (
-          <div
-            className={classes.markerContainer}
-            lat={Number(place.latitude)}
-            lng={Number(place.longitude)}
-            key={i}
-          >
-            {!matches ? (
-              <LocationOnOutlinedIcon color="primary" fontSize="large" />
-            ) : (
-              <Paper elevation={3} className={classes.paper}>
-                <Typography className={classes.typography} variant="subtitle2" gutterBottom>
-                  {place.name}
-                </Typography>
-                <img
-                  className={classes.pointer}
-                  src={place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'}
-                  alt={place.name}
-                />
-                <Rating name="read-only" size="small" value={Number(place.rating)} readOnly />
-              </Paper>
-            )}
-          </div>
+          place.latitude && place.longitude && (
+            <div
+              className={classes.markerContainer}
+              lat={Number(place.latitude)}
+              lng={Number(place.longitude)}
+              key={i}
+            >
+              {!matches ? (
+                <LocationOnOutlinedIcon color="primary" fontSize="large" />
+              ) : (
+                <Paper elevation={3} className={classes.paper}>
+                  <Typography className={classes.typography} variant="subtitle2" gutterBottom>
+                    {place.name}
+                  </Typography>
+                  <img
+                    className={classes.pointer}
+                    src={place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'}
+                    alt={place.name}
+                  />
+                  <Rating name="read-only" size="small" value={Number(place.rating)} readOnly />
+                </Paper>
+              )}
+            </div>
+          )
         ))}
       </GoogleMapReact>
     </div>

@@ -24,6 +24,7 @@ const ReservationForm = () => {
         ...formData,
       });
       setSubmitted(true);
+      alert('Successfully submitted'); // Display alert on successful submission
     } catch (error) {
       console.error('Error submitting form:', error);
     }

@@ -12,15 +12,16 @@ import ReviewForm from './component/ReviewForm';
 import ReviewsList from './component/ReviewList';
 import Gallery from './component/Gallery'; // Import Gallery component
 import About from './component/About'; // Import About component
-import { getPlacesData } from './api/travelAdvisorAPI';
+import { getPlacesData } from './api/travelAdvisorAPI'; // Ensure correct import path
 import useStyles from './component/styles';
 
 function App() {
   const [coords, setCoords] = useState({ lat: 0, lng: 0 });
-  const [bounds, setBounds] = useState(null);
+  const [bounds, setBounds] = useState([]);
   const [places, setPlaces] = useState([]);
   const [childClicked, setChildClicked] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null); // Add error state
   const [isAuthenticated, setIsAuthenticated] = useState(false); // Add authentication state
   const classes = useStyles();
 
@@ -34,12 +35,19 @@ function App() {
     if (bounds) {
       setIsLoading(true);
       getPlacesData('restaurants', bounds.sw, bounds.ne)
-        .then((data) => {
-          setPlaces(data);
+        .then((response) => {
+          if (response.error) {
+            setError(response.error);
+            setPlaces([]);
+          } else {
+            setPlaces(response.data);
+            setError(null);
+          }
           setIsLoading(false);
         })
         .catch((error) => {
           console.log('Error fetching places:', error);
+          setError('An unexpected error occurred');
           setIsLoading(false);
         });
     }
@@ -70,6 +78,7 @@ function App() {
                   <ReviewsList placeId={childClicked} />
                 </div>
               )}
+              {error && <div className="error">Error: {error}</div>} {/* Display error message */}
               <ReservationForm />
               <Footer />
             </div>

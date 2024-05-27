@@ -1,9 +1,8 @@
-/* eslint-disable consistent-return */
 import axios from 'axios';
 
 export const getPlacesData = async (type, sw, ne) => {
   try {
-    const { data: { data } } = await axios.get(`https://travel-advisor.p.rapidapi.com/${type}/list-in-boundary`, {
+    const response = await axios.get(`https://travel-advisor.p.rapidapi.com/${type}/list-in-boundary`, {
       params: {
         bl_latitude: sw.lat,
         bl_longitude: sw.lng,
@@ -16,8 +15,29 @@ export const getPlacesData = async (type, sw, ne) => {
       },
     });
 
-    return data;
+    const data = response.data.data;
+
+    console.log('API response data:', data);
+
+    if (!data || data.length === 0) {
+      throw new Error('API limit reached or no data returned');
+    }
+
+    return { data, error: null };
   } catch (error) {
-    console.log(error);
+    console.log('API error:', error.message);
+    let errorMessage = 'Network Error';
+    if (error.response) {
+      // The request was made and the server responded with a status code
+      // that falls out of the range of 2xx
+      errorMessage = `${error.response.status}: ${error.response.statusText}`;
+      if (error.response.data && error.response.data.message) {
+        errorMessage += ` - ${error.response.data.message}`;
+      }
+    } else if (error.request) {
+      // The request was made but no response was received
+      errorMessage = 'No response received from server';
+    }
+    return { data: [], error: errorMessage };
   }
 };
