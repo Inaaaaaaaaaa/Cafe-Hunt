@@ -8,6 +8,7 @@ import ReservationForm from './component/ReservationForm';
 import Footer from './component/Footer';
 import LoginPage from './component/LoginPage';  
 import RegisterPage from './component/RegisterPage';  
+import Gallery from './component/Gallery'; // Import the Gallery component
 import { getPlacesData } from './api/travelAdvisorAPI';
 import useStyles from './component/styles';
 
@@ -19,7 +20,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const classes = useStyles();
 
-  useEffect(() => {
+  useEffect(() => {  
     navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
       setCoords({ lat: latitude, lng: longitude });
     });
@@ -42,13 +43,13 @@ function App() {
 
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Navigate replace to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/home" element={
           <div className="App">
-            <Header />
             <Banner />
             <div className={classes.flexContainer}>
               <div className={classes.mapContainer}>
@@ -62,6 +63,7 @@ function App() {
             <Footer />
           </div>
         } />
+        <Route path="/gallery" element={<Gallery />} /> {/* Add this route for Gallery */}
       </Routes>
     </Router>
   );

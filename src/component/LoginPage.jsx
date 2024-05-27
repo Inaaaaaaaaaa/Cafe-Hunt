@@ -4,7 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase/firebase-config';
 import './AuthForm.css';
 
-function LoginPage() {
+function LoginPage({ onLogin }) { // Accept onLogin prop
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState(''); // State to store login error message
@@ -16,6 +16,7 @@ function LoginPage() {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log('Logged in User:', userCredential.user);
+      onLogin(); // Call onLogin to set authentication state
       navigate('/home'); // Navigate to the home page on successful login
     } catch (error) {
       console.error('Error during login:', error.message);
@@ -32,7 +33,6 @@ function LoginPage() {
   return (
     <div className="auth-container">
       <form onSubmit={handleLogin}>
-
         <h2>Login ☕</h2>
         <p>Welcome back user! Log in to start your journey of cafe hunting!</p>
         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
