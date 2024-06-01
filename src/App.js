@@ -77,13 +77,7 @@ function App() {
           />
         </div>
       </div> 
-              {/* {childClicked && (
-                <div className={classes.reviewSection}>
-                  <ReviewForm placeId={childClicked} />
-                  <ReviewsList placeId={childClicked} />
-                </div>
-              )}
-              {error && <div className="error">Error: {error}</div>} {} */}
+              
               <ReservationForm />
               <Footer />
             </div>
