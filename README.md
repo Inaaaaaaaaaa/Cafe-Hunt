@@ -1,4 +1,4 @@
-                                                             ** Cafe Hunt**
+                                                            Cafe Hunt
 
 ## Introduction: Cafe Hunt is a website application created and developed by 5 developers. The goal of this app is to allow users to search up cafes around their area or type in a different location to enhance their experience of finding new cafes.
 
@@ -44,7 +44,7 @@ Yuchang Sun: sunyuchang123 https://github.com/sunyuchang123
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 --------------------------------------------------------------------------------------------------------------------------------------------
-                                             **Installation steps and usage instructions:**
+                                            Installation steps and usage instructions:
 # Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
